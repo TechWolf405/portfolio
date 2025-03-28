@@ -12,7 +12,7 @@ export default function HeroSection() {
     target: containerRef,
     offset: ["start start", "end start"]
   })
-
+  console.log(isImageLoaded);
   // Parallax effect calculations
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"])

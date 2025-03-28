@@ -65,7 +65,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 max-w-2xl mx-auto text-lg text-gray-300"
         >
-          I'm a passionate developer and designer who loves creating digital solutions that make a difference. 
+          I am a passionate developer and designer who loves creating digital solutions that make a difference. 
           With a blend of technical skills and creative vision, I transform ideas into beautiful, functional experiences.
         </motion.p>
       </div>

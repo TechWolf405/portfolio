@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { 
-  FaReact, 
+ 
   FaPython, 
   FaDatabase, 
   FaFigma, 
@@ -12,7 +12,7 @@ import {
   FaHtml5,
   FaCss3Alt
 } from 'react-icons/fa'
-import { SiPostman, SiNumpy, SiPandas, SiFlask, SiTkinter, SiCanva } from 'react-icons/si'
+import { SiPostman, SiNumpy, SiPandas, SiFlask, SiCanva } from 'react-icons/si'
 
 export default function SkillsSection() {
   const skills = [
