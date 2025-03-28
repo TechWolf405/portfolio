@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Vibrant and modern color palette */
+  --color-background: #0F172A;
+  --color-primary: #22D3EE; /* Bright cyan */
+  --color-secondary: #6366F1; /* Indigo */
+  --color-accent: #EC4899; /* Pink */
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
 }
 
 @theme inline {
@@ -20,7 +25,62 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-[var(--color-background)] text-[var(--color-text-primary)] 
+         selection:bg-[var(--color-accent)] selection:text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--color-secondary)] rounded-full;
+}
+
+/* Animated gradient background */
+.gradient-bg {
+  background: linear-gradient(
+    -45deg, 
+    var(--color-background), 
+    #1E293B, 
+    var(--color-secondary), 
+    var(--color-accent)
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle text animations */
+.animate-text-reveal {
+  @apply opacity-0 transform translate-y-10 transition-all duration-1000 ease-out;
+}
+
+.animate-text-reveal.is-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl;
+}
+
+/* Glowing border effect */
+.glow-border {
+  @apply border border-transparent relative overflow-hidden;
+}
+
+.glow-border::before {
+  content: '';
+  @apply absolute inset-0 
+         bg-gradient-to-r from-[var(--color-primary)] 
+         to-[var(--color-accent)] 
+         opacity-50 blur-lg 
+         animate-pulse;
 }
